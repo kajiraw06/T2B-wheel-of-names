@@ -1209,7 +1209,7 @@ button:disabled::before {
     #wheelCanvas {
         width: 100px;
         height: 100px;
-        max-width: 650px;
+        max-width: 660px;
         
         
 
@@ -1359,7 +1359,7 @@ button:disabled::before {
     .title-container {
         position: absolute;
         left: 13%;
-        top: 18%;
+        top: 20%;
         transform: translateY(-50%);
     }
     
