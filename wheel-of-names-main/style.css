@@ -1177,7 +1177,7 @@ button:disabled::before {
     .title-container {
         position: absolute;
         left: 13%;
-        top: 40%;
+        top: 20%;
         transform: translateY(-50%);    
     }
     
