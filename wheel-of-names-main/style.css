@@ -74,6 +74,16 @@ body::before {
     top: 30px;
 }
 
+.wheel-title-img {
+    width: 350px;
+    height: auto;
+    position: absolute;
+    top: -90px;
+    left: 40%;
+    transform: translateX(-40%);
+    z-index: 10;
+}
+
 .prize-item {
     display: flex;
     flex-direction: column;
@@ -211,8 +221,8 @@ body::before {
 
 .wheel-pointer {
     position: absolute;
-    top: -40px;
-    left: 50%;
+    top: -50px; /* Raised 10px higher */
+    left: 50%; /* Move pointer 2% more to the left */
     transform: translateX(-50%);
     z-index: 14;
     filter: drop-shadow(0 5px 10px rgba(0,0,0,0.4));
@@ -320,11 +330,6 @@ h1 {
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     letter-spacing: 2px;
     position: relative;
-}
-
-h1 img {
-    width: 450px;
-    height: auto;
 }
 
 label {
@@ -684,6 +689,11 @@ button:disabled::before {
 }
 
 @media (max-width: 768px) {
+    .wheel-title-img {
+        width: 170px;
+        top: -45px;
+    }
+    
     .logo-branding {
         top: 10px;
     }
@@ -1012,6 +1022,11 @@ button:disabled::before {
 
 /* Ultra Wide Screens (2560px+) */
 @media (min-width: 2560px) {
+    .wheel-title-img {
+        width: 600px;
+        top: -150px;
+    }
+    
     .wheel-container {
         position: absolute;
         left: 62%;
@@ -1106,8 +1121,122 @@ button:disabled::before {
     }
 }
 
+/* Ultra High Resolution (3024 × 1964 - MacBook Pro/Retina displays) */
+@media (min-width: 3024px) {
+    .wheel-title-img {
+        width: 700px;
+        top: -180px;
+    }
+    
+    .wheel-container {
+        position: absolute;
+        left: 62%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .wheel-wrapper {
+        width: 1000px;
+        height: 1000px;
+    }
+    
+    .wheel-frame {
+        width: 1300px;
+        height: 1300px;
+    }
+    
+    #wheelCanvas {
+        width: 1200px !important;
+        height: 1200px !important;
+    }
+    
+    .names-container {
+        position: absolute;
+        left: 28% !important;
+        top: 55% !important;
+        transform: translate(-50%, -50%);
+        max-width: 480px;
+    }
+    
+    .list-frame-wrapper {
+        width: 480px;
+        height: 850px;
+    }
+    
+    .list-frame {
+        height: 850px;
+        width: 480px;
+    }
+    
+    .list-frame-wrapper #namesForm {
+        height: 830px;
+        top: 10px;
+        left: 10px;
+        right: 20px;
+    }
+    
+    .names-container:hover {
+        transform: translate(-50%, -50%);
+    }
+    
+    .girl-decoration {
+        right: 6%;
+    }
+    
+    .girl-img {
+        max-height: 1400px;
+    }
+
+    #spinBtn {
+        width: 260px !important;
+        height: 260px !important;
+    }
+    
+    .giveaways-container {
+        position: absolute;
+        left: 6%;
+        top: 55%;
+        transform: translateY(-50%);
+    }
+    
+    .giveaways-box {
+        width: 1300px;
+    }
+    
+    .prizes-section {
+        position: absolute;
+        top: 50%;
+        left: 18%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .title-container {
+        position: absolute;
+        left: 11%;
+        top: 24%;
+        transform: translateY(-50%);    
+    }
+    
+    .prize-phone {
+        width: 420px;
+    }
+    
+    .prizes-title {
+        font-size: 44px;
+    }
+    
+    .prize-label {
+        font-size: 22px;
+    }
+}
+
 /* Extra Large Screens (1920px - 2559px) */
 @media (max-width: 2559px) and (min-width: 1920px) {
+    .wheel-title-img {
+        width: 500px;
+        top: -120px;
+    }
+    
     .wheel-container {
         position: absolute;
         left: 62%;
@@ -1177,7 +1306,7 @@ button:disabled::before {
     .title-container {
         position: absolute;
         left: 13%;
-        top: 20%;
+        top: 10%;
         transform: translateY(-50%);    
     }
     
@@ -1188,6 +1317,11 @@ button:disabled::before {
 
 /* Large Desktop (1440px - 1919px) */
 @media (max-width: 1919px) and (min-width: 1440px) {
+    .wheel-title-img {
+        width: 400px;
+        top: -100px;
+    }
+    
     .wheel-container {
         position: absolute;
         left: 65%;
@@ -1207,8 +1341,8 @@ button:disabled::before {
     }
     
     #wheelCanvas {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
         max-width: 660px;
         
         
@@ -1273,6 +1407,11 @@ button:disabled::before {
 
 /* Medium Desktop (1280px - 1439px) */
 @media (max-width: 1439px) and (min-width: 1280px) {
+    .wheel-title-img {
+        width: 350px;
+        top: -90px;
+    }
+    
     .wheel-container {
         position: absolute;
         left: 62%;
@@ -1334,10 +1473,6 @@ button:disabled::before {
         width: 60px;
     }
     
-    h1 img {
-        width: 350px;
-    }
-    
     .giveaways-container {
         position: absolute;
         left: 3%;
@@ -1358,8 +1493,8 @@ button:disabled::before {
     
     .title-container {
         position: absolute;
-        left: 13%;
-        top: 20%;
+        left: 10%;
+        top: 24%;
         transform: translateY(-50%);
     }
     
@@ -1374,9 +1509,14 @@ button:disabled::before {
 
 /* Small Desktop / Large Laptop (1024px - 1279px) */
 @media (max-width: 1279px) and (min-width: 1024px) {
+    .wheel-title-img {
+        width: 300px;
+        top: -75px;
+    }
+    
     .wheel-container {
         position: absolute;
-        left: 62%;
+        left: 68%;
         top: 50%;
         transform: translate(-50%, -50%);
     }
@@ -1392,29 +1532,41 @@ button:disabled::before {
     }
     
     #wheelCanvas {
-        width: 520px;
-        height: 520px;
+        width: 545px !important;
+        height: 545px !important;
     }
     
     .names-container {
         position: absolute;
         left: 22% !important;
-        top: 50% !important;
+        top: 48% !important;
         transform: translateY(-50%);
         max-width: 200px;
     }
     
     .list-frame-wrapper {
-        width: 200px;
-        height: 300px;
+        width: 235px;
+        height: 280px;
+        left: 18%;
+        top: 30%;
+    }
+    
+    .list-frame {
+        height: 401px;
+        width: 235px;
+    }
+    
+    .list-frame-wrapper #namesForm {
+        height: 390px;
     }
     
     .girl-decoration {
-        display: none;
+        display: block;
+        right: 1%;
     }
     
     .girl-img {
-        max-height: 500px;
+        max-height: 450px;
     }
     
     #spinBtn {
@@ -1424,14 +1576,6 @@ button:disabled::before {
     
     .pointer-img {
         width: 55px;
-    }
-    
-    h1 img {
-        width: 200px;
-    }
-    
-    h1 {
-        top: -30px;
     }
     
     .logo-img {
@@ -1460,17 +1604,17 @@ button:disabled::before {
     .title-container {
         position: absolute;
         left: 13%;
-        top: 15%;
+        top: 27%;
         transform: translateY(-50%);
     }
     
     .prize-phone {
-        width: 160px;
+        width: 200px;
     }
     
     .prizes-title {
         font-size: 26px;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
     
     .prize-label {
@@ -1480,6 +1624,11 @@ button:disabled::before {
 
 /* Laptop (900px - 1023px) */
 @media (max-width: 1023px) and (min-width: 900px) {
+    .wheel-title-img {
+        width: 250px;
+        top: -60px;
+    }
+    
     .wheel-container {
         position: absolute;
         left: 62%;
@@ -1530,14 +1679,6 @@ button:disabled::before {
     
     .wheel-pointer {
         top: -40px;
-    }
-    
-    h1 img {
-        width: 180px;
-    }
-    
-    h1 {
-        top: -25px;
     }
     
     .logo-img {
@@ -1591,6 +1732,11 @@ button:disabled::before {
 
 /* Small Laptop (768px - 899px) */
 @media (max-width: 899px) and (min-width: 768px) {
+    .wheel-title-img {
+        width: 200px;
+        top: -55px;
+    }
+    
     .wheel-container {
         position: absolute;
         left: 62%;
@@ -1641,14 +1787,6 @@ button:disabled::before {
     
     .wheel-pointer {
         top: -35px;
-    }
-    
-    h1 img {
-        width: 160px;
-    }
-    
-    h1 {
-        top: -20px;
     }
     
     .logo-img {
