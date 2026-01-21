@@ -112,13 +112,13 @@ body::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 60px;
 }
 
 .prize-phone {
-    width: 260px;
+    width: 110px;
     height: auto;
-    margin-bottom: -10px;
+    margin-bottom: 15px;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
 }
 
@@ -130,6 +130,11 @@ body::before {
     text-align: center;
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Lower iPhone image only */
+.prize-item:nth-child(2) .prize-phone {
+    margin-top: 30px;
 }
 
 /* Move Infinix prize up */
@@ -1153,7 +1158,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 350px;
+        width: 180px;
     }
 }
 
@@ -1265,7 +1270,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 420px;
+        width: 220px;
     }
     
     .prizes-title {
@@ -1373,7 +1378,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 230px;
+        width: 110px;
     }
 }
 
@@ -1463,7 +1468,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 210px;
+        width: 110px;
     }
 }
 
@@ -1585,7 +1590,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 173px;
+        width: 95px;
     }
     
     .prizes-title {
@@ -1695,7 +1700,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 200px;
+        width: 100px;
     }
     
     .prizes-title {
@@ -1798,7 +1803,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 130px;
+        width: 70px;
     }
     
     .prizes-title {
@@ -1919,7 +1924,7 @@ button:disabled {
     }
     
     .prize-phone {
-        width: 110px;
+        width: 65px;
     }
     
     .prizes-title {
