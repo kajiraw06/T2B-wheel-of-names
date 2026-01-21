@@ -347,7 +347,35 @@ function spinToWinner(winnerName) {
     const totalAngle = 2 * Math.PI * randomRounds + (targetAngle - normalizedRotation);
     const startRotation = normalizedRotation;
     let startTimestamp = null;
+    const startTime = performance.now();
     const duration = 7000 + Math.random() * 1000;
+    
+    // Set a timeout to force-stop spinning sound after duration (works even when tab is hidden)
+    const soundTimeout = setTimeout(() => {
+        if (activeSpinSound) {
+            activeSpinSound.stop();
+            activeSpinSound = null;
+        }
+        clearInterval(sparkleInterval);
+        wheelFrame.classList.remove('spinning');
+        spinning = false;
+        spinBtn.disabled = false;
+        
+        // Ensure final position is set
+        const finalProgress = 1;
+        const finalEase = 1 - Math.pow(1 - finalProgress, 3);
+        currentRotation = startRotation + finalEase * totalAngle;
+        currentRotation = currentRotation % (2 * Math.PI);
+        if (currentRotation < 0) currentRotation += 2 * Math.PI;
+        
+        drawWheel();
+        const degrees = (currentRotation * 180) / Math.PI;
+        wheelFrame.style.transform = `translate(-50%, -50%) rotate(${degrees}deg)`;
+        
+        setTimeout(() => {
+            showWinner(winnerName);
+        }, 300);
+    }, duration + 100);
     
     console.log('Spinning to winner:', winnerName, 'at index:', winnerIndex); // Debug message
     
@@ -358,6 +386,9 @@ function spinToWinner(winnerName) {
     function animateWheel(timestamp) {
         if (!startTimestamp) startTimestamp = timestamp;
         
+        // Calculate elapsed time based on real time, not requestAnimationFrame timestamp
+        const elapsed = performance.now() - startTime;
+        
         // Throttle to 60 FPS max
         if (timestamp - lastFrameTime < frameInterval) {
             requestAnimationFrame(animateWheel);
@@ -365,7 +396,6 @@ function spinToWinner(winnerName) {
         }
         lastFrameTime = timestamp;
         
-        const elapsed = timestamp - startTimestamp;
         const progress = Math.min(1, elapsed / duration);
         
         // Smooth easing - cubic ease out for natural deceleration
@@ -381,9 +411,12 @@ function spinToWinner(winnerName) {
         if (progress < 1) {
             requestAnimationFrame(animateWheel);
         } else {
+            clearTimeout(soundTimeout);
             clearInterval(sparkleInterval);
-            spinSound.stop();
-            activeSpinSound = null;
+            if (activeSpinSound) {
+                spinSound.stop();
+                activeSpinSound = null;
+            }
             spinning = false;
             spinBtn.disabled = false;
             
@@ -646,7 +679,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Listen for page visibility changes (tab switching)
-// Note: Audio continues playing even when tab is hidden
+// Note: Animation continues using real time (performance.now()) so it completes even when tab is hidden
 
 // Clean up audio on page unload (closing tab/window or navigating away)
 window.addEventListener('beforeunload', () => {
