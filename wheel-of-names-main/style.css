@@ -210,19 +210,22 @@ body::before {
 
 .wheel-frame {
     position: absolute;
-    top: 60%;
-    left: 60%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 900px;
-    height: 900px;
+    width: 680px;
+    height: 680px;
     z-index: 10;
     pointer-events: none;
     transition: filter 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wheel-frame img {
-    width: 700px;
-    height: 700px;
+    width: 680px;
+    height: 680px;
     object-fit: contain;
 }
 
@@ -1070,8 +1073,6 @@ button:disabled {
     .wheel-frame {
         width: 1100px;
         height: 1100px;
-        top: 50%;
-        left: 50%;
     }
     
     .wheel-frame img {
@@ -1183,8 +1184,6 @@ button:disabled {
     .wheel-frame {
         width: 1600px;
         height: 1600px;
-        left: 65% !important;
-        top: 50% !important;
     }
     
     .wheel-frame img {
@@ -1299,8 +1298,13 @@ button:disabled {
     }
     
     .wheel-frame {
-        width: 850px;
-        height: 850px;
+        width: 750px;
+        height: 750px;
+    }
+    
+    .wheel-frame img {
+        width: 710px;
+        height: 710px;
     }
     
     #wheelCanvas {
@@ -1397,8 +1401,6 @@ button:disabled {
     .wheel-frame {
         width: 700px;
         height: 700px;
-        left: 50% !important;
-        top: 50% !important;
     }
     
     #wheelCanvas {
@@ -1489,8 +1491,6 @@ button:disabled {
     .wheel-frame {
         width: 500px;
         height: 500px;
-        top: 50% !important;
-        left: 50% !important;
     }
     
     .wheel-frame img {

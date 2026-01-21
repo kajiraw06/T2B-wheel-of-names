@@ -11,6 +11,23 @@ let winner = '';
 let spinning = false;
 let currentRotation = 0;
 
+// Global audio tracking
+let activeSpinSound = null;
+let activeAudioElements = [];
+let pausedAudioElements = [];
+
+// Override Audio constructor to track all audio elements
+const OriginalAudio = window.Audio;
+window.Audio = function(...args) {
+    const audio = new OriginalAudio(...args);
+    activeAudioElements.push(audio);
+    audio.addEventListener('ended', () => {
+        const index = activeAudioElements.indexOf(audio);
+        if (index > -1) activeAudioElements.splice(index, 1);
+    });
+    return audio;
+};
+
 // Wheel colors - Blue, White, and Orange matching the theme
 const WHEEL_COLORS = ['#2563a8', '#ffffff', '#fd9201'];
 
@@ -302,6 +319,7 @@ function spinToWinner(winnerName) {
     
     // Start spinning sound
     const spinSound = playSpinningSound();
+    activeSpinSound = spinSound;
     
     // Create sparkles during spin (reduced frequency for performance)
     const sparkleInterval = setInterval(() => {
@@ -365,6 +383,7 @@ function spinToWinner(winnerName) {
         } else {
             clearInterval(sparkleInterval);
             spinSound.stop();
+            activeSpinSound = null;
             spinning = false;
             spinBtn.disabled = false;
             
@@ -624,4 +643,32 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Disable spin button initially
     spinBtn.disabled = true;
+});
+
+// Listen for page visibility changes (tab switching)
+// Note: Audio continues playing even when tab is hidden
+
+// Clean up audio on page unload (closing tab/window or navigating away)
+window.addEventListener('beforeunload', () => {
+    if (activeSpinSound) {
+        activeSpinSound.stop();
+        activeSpinSound = null;
+    }
+    activeAudioElements.forEach(audio => {
+        try {
+            audio.pause();
+        } catch (e) {}
+    });
+});
+
+window.addEventListener('pagehide', () => {
+    if (activeSpinSound) {
+        activeSpinSound.stop();
+        activeSpinSound = null;
+    }
+    activeAudioElements.forEach(audio => {
+        try {
+            audio.pause();
+        } catch (e) {}
+    });
 });
