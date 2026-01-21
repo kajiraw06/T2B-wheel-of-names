@@ -1,3 +1,27 @@
+/* Time2Win Logo at Top Center */
+.time2win-logo {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 550px;
+    height: auto;
+    z-index: 100;
+    display: block;
+}
+img.wheel-title-img {
+    width: 400px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+img.giveaways-box {
+    width: 750px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    
+}
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +59,7 @@ body::before {
 /* Giveaways/Prizes container */
 .giveaways-container {
     position: absolute;
-    left: 8%;
+    left: 18% !important;
     top: 55%;
     transform: translateY(-50%);
     z-index: 1;
@@ -78,7 +102,7 @@ body::before {
     width: 350px;
     height: auto;
     position: absolute;
-    top: -90px;
+    top: -90px; 
     left: 40%;
     transform: translateX(-40%);
     z-index: 10;
@@ -186,8 +210,8 @@ body::before {
 
 .wheel-frame {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    left: 60%;
     transform: translate(-50%, -50%);
     width: 900px;
     height: 900px;
@@ -197,8 +221,8 @@ body::before {
 }
 
 .wheel-frame img {
-    width: 100%;
-    height: 100%;
+    width: 700px;
+    height: 700px;
     object-fit: contain;
 }
 
@@ -252,8 +276,8 @@ body::before {
     border-radius: 50%;
     box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
     border: none;
-    width: 780px !important;
-    height: 780px !important;
+    width: 680px !important;
+    height: 680px !important;
 }
 
 #spinBtn {
@@ -369,7 +393,9 @@ textarea {
 }
 
 .list-frame-wrapper {
-    position: relative;
+    position: absolute;
+    left: 10%;
+    top: 30%;
     width: 320px;
     height: 500px;
     overflow: visible;
@@ -493,10 +519,6 @@ button:disabled {
     cursor: not-allowed;
     transform: none;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-}
-
-button:disabled::before {
-    display: none;
 }
 
 @keyframes pulse {
@@ -1022,9 +1044,15 @@ button:disabled::before {
 
 /* Ultra Wide Screens (2560px+) */
 @media (min-width: 2560px) {
+    .time2win-logo {
+        width: 700px;
+        top: 50px;
+    }
+    
     .wheel-title-img {
-        width: 600px;
+        width: 550px !important;
         top: -150px;
+        left: 30% !important;
     }
     
     .wheel-container {
@@ -1035,24 +1063,31 @@ button:disabled::before {
     }
     
     .wheel-wrapper {
-        width: 800px;
-        height: 800px;
+        width: 900px;
+        height: 900px;
     }
     
     .wheel-frame {
         width: 1100px;
         height: 1100px;
+        top: 50%;
+        left: 50%;
+    }
+    
+    .wheel-frame img {
+        width: 1100px;
+        height: 1100px;
     }
     
     #wheelCanvas {
-        width: 1000px !important;
-        height: 1000px !important;
+        width: 970px !important;
+        height: 970px !important;
     }
     
     .names-container {
         position: absolute;
         left: 30% !important;
-        top: 55% !important;
+        top: 30% !important;
         transform: translate(-50%, -50%);
         max-width: 400px;
     }
@@ -1079,27 +1114,27 @@ button:disabled::before {
     }
     
     .girl-decoration {
-        right: 8%;
+        right: 5% !important;
     }
     
     .girl-img {
-        max-height: 1200px;
+        max-height: 1100px;
     }
     
     #spinBtn {
-        width: 220px !important;
-        height: 220px !important;
+        width: 260px !important;
+        height: 260px !important;
     }
     
     .giveaways-container {
         position: absolute;
-        left: 8%;
+        left: 10% !important;
         top: 55%;
         transform: translateY(-50%);
     }
     
-    .giveaways-box {
-        width: 1100px;
+    img.giveaways-box {
+        width: 1100px !important;
     }
     
     .prizes-section {
@@ -1123,9 +1158,14 @@ button:disabled::before {
 
 /* Ultra High Resolution (3024 × 1964 - MacBook Pro/Retina displays) */
 @media (min-width: 3024px) {
+    .time2win-logo {
+        width: 1000px;
+        top: 60px;
+    }
+    
     .wheel-title-img {
-        width: 700px;
-        top: -180px;
+        width: 800px !important;
+        top: -240px;
     }
     
     .wheel-container {
@@ -1141,31 +1181,39 @@ button:disabled::before {
     }
     
     .wheel-frame {
+        width: 1600px;
+        height: 1600px;
+        left: 65% !important;
+        top: 50% !important;
+    }
+    
+    .wheel-frame img {
         width: 1300px;
-        height: 1300px;
+        height: 1600px;
     }
     
     #wheelCanvas {
-        width: 1200px !important;
-        height: 1200px !important;
+        width: 1140px !important;
+        height: 1140px !important;
     }
     
     .names-container {
         position: absolute;
-        left: 28% !important;
-        top: 55% !important;
+        left: 30% !important;
+        top: 35% !important;
         transform: translate(-50%, -50%);
         max-width: 480px;
     }
     
     .list-frame-wrapper {
-        width: 480px;
+        width: 450px;
         height: 850px;
     }
     
     .list-frame {
         height: 850px;
-        width: 480px;
+        width: 487px;
+        left: -2% !important;
     }
     
     .list-frame-wrapper #namesForm {
@@ -1199,8 +1247,8 @@ button:disabled::before {
         transform: translateY(-50%);
     }
     
-    .giveaways-box {
-        width: 1300px;
+    img.giveaways-box {
+        width: 1400px !important;
     }
     
     .prizes-section {
@@ -1233,8 +1281,9 @@ button:disabled::before {
 /* Extra Large Screens (1920px - 2559px) */
 @media (max-width: 2559px) and (min-width: 1920px) {
     .wheel-title-img {
-        width: 500px;
-        top: -120px;
+        width: 600px;
+        top: -120px;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+        left: 30%;
     }
     
     .wheel-container {
@@ -1255,21 +1304,30 @@ button:disabled::before {
     }
     
     #wheelCanvas {
-        width: 750px;
-        height: 750px;
+        width: 625px !important;
+        height: 625px !important;
     }
     
     .names-container {
         position: absolute;
-        left: 22% !important;
-        top: 50% !important;
+        left: 26% !important;
+        top: 33% !important;
         transform: translateY(-50%);
         max-width: 280px;
     }
     
     .list-frame-wrapper {
-        width: 280px;
-        height: 420px;
+        width: 270px;
+        height: 415px;
+    }
+    
+    .list-frame {
+        width: 270px;
+        height: 415px;
+    }
+    
+    .list-frame-wrapper #namesForm {
+        height: 395px;
     }
     
     .girl-decoration {
@@ -1299,19 +1357,19 @@ button:disabled::before {
     .prizes-section {
         position: absolute;
         top: 50%;
-        left: 20%;
+        left: 14%;
         transform: translate(-50%, -50%);
     }
     
     .title-container {
         position: absolute;
-        left: 13%;
+        left: 10%;
         top: 10%;
         transform: translateY(-50%);    
     }
     
     .prize-phone {
-        width: 280px;
+        width: 230px;
     }
 }
 
@@ -1320,12 +1378,13 @@ button:disabled::before {
     .wheel-title-img {
         width: 400px;
         top: -100px;
+        left: 25%;
     }
     
     .wheel-container {
-        position: absolute;
-        left: 65%;
-        top: 50%;
+        position: absolute; 
+        left: 70% !important;
+        top: 50% !important;
         transform: translate(-50%, -50%);
     }
     
@@ -1338,21 +1397,22 @@ button:disabled::before {
     .wheel-frame {
         width: 700px;
         height: 700px;
+        left: 50% !important;
+        top: 50% !important;
     }
     
     #wheelCanvas {
-        width: 110px;
-        height: 110px;
-        max-width: 660px;
-        
-        
-
+        width: 650px !important;
+        height: 650px !important;
+        position: relative;
+        left: 0;
+        top: 0;
     }
     
     .names-container {
         position: absolute;
-        left: 24% !important;
-        top: 50% !important;
+        left: 30% !important;
+        top: 33% !important;
         transform: translateY(-50%);
         max-width: 200px;
     }
@@ -1401,15 +1461,17 @@ button:disabled::before {
     }
     
     .prize-phone {
-        width: 240px;
+        width: 210px;
     }
 }
 
 /* Medium Desktop (1280px - 1439px) */
 @media (max-width: 1439px) and (min-width: 1280px) {
     .wheel-title-img {
-        width: 350px;
-        top: -90px;
+        width: 400px;
+        top: -80px;
+        left: 40%;
+        transform: translateX(-40%);
     }
     
     .wheel-container {
@@ -1420,90 +1482,114 @@ button:disabled::before {
     }
     
     .wheel-wrapper {
-        width: 400px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
     }
     
     .wheel-frame {
-        width: 650px;
-        height: 650px
+        width: 500px;
+        height: 500px;
+        top: 50% !important;
+        left: 50% !important;
+    }
+    
+    .wheel-frame img {
+        width: 500px;
+        height: 500px;
     }
     
     #wheelCanvas {
-        width: 650px;
-        height: 650px;
-        max-width: 570px;
+        width: 450px !important;
+        height: 450px !important;
     }
     
     .names-container {
         position: absolute;
-        left: 21% !important;   
-        top: 55% !important;
+        left: 26% !important;
+        top: 30% !important;
         transform: translateY(-50%);
-        max-width: 100px;
+        max-width: 187px;
     }
     
     .list-frame-wrapper {
-        width: 220px !important;
-        height: 350px !important;
+        width: 200px;
+        height: 300px;
+        overflow: visible;
     }
     
     .list-frame {
-        height: 400px;
+        width: 220px;
+        height: 320px;
+        position: absolute;
+        top: 33px;
+        left: -40px;
+        z-index: 10;
+        pointer-events: none;
+        object-fit: contain;
     }
     
     .list-frame-wrapper #namesForm {
-        height: 390px;
+        height: 295px;
+        width: 205px;
+        position: absolute;
+        top: 45px;
+        left: -28px;
+        right: auto;
+    }
+    
+    .list-frame-wrapper textarea {
+        border-radius: 35px;
     }
     
     .girl-decoration {
-        right: 3%;
+        right: 8%;
     }
     
     .girl-img {
-        max-height: 550px;
+        max-height: 500px;
     }
     
     #spinBtn {
-        width: 150px !important;
-        height: 150px !important;
+        width: 133px !important;
+        height: 133px !important;
     }
     
     .pointer-img {
         width: 60px;
+        top: 10px !important;
     }
     
     .giveaways-container {
         position: absolute;
-        left: 3%;
+        left: 8% !important;
         top: 55%;
         transform: translateY(-50%);
     }
     
-    .giveaways-box {
-        width: 700px;
+    img.giveaways-box {
+        width: 600px;
     }
     
     .prizes-section {
         position: absolute;
         top: 50%;
-        left: 15%;
+        left: 14%;
         transform: translate(-50%, -50%);
     }
     
     .title-container {
         position: absolute;
-        left: 10%;
-        top: 24%;
+        left: 13%;
+        top: 15%;
         transform: translateY(-50%);
     }
     
     .prize-phone {
-        width: 200px;
+        width: 173px;
     }
     
     .prizes-title {
-        font-size: 30px;
+        font-size: 28px;
     }
 }
 
@@ -1929,4 +2015,13 @@ button:disabled::before {
             #d5d6ec 48px
         ) !important;
     }
+}
+
+.grouped-main {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }
